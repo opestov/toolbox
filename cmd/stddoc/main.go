@@ -80,13 +80,13 @@ func processPackage(pkg *build.Package) []string {
 
 		for _, value := range typ.Consts {
 			for _, name := range value.Names {
-				res = append(res, fmt.Sprintf("%s.%s.%s", docPkg.ImportPath, typ.Name, name))
+				res = append(res, fmt.Sprintf("%s.%s", docPkg.ImportPath, name))
 				break
 			}
 		}
 		for _, value := range typ.Vars {
 			for _, name := range value.Names {
-				res = append(res, fmt.Sprintf("%s.%s.%s", docPkg.ImportPath, typ.Name, name))
+				res = append(res, fmt.Sprintf("%s.%s", docPkg.ImportPath, name))
 				break
 			}
 		}
