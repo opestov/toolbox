@@ -1,15 +1,29 @@
 // Prints a list of strings representing symbols from the standard library.
-// PS: go run . | Set-Content $HOME/goapi.txt
+//
+// PS:		go run . | Set-Content $HOME/goapi.txt
+// BASH:	go run . >> ~/goapi.txt
 //
 // Each item in the list is a valid argument for the 'go doc' tool. And now
 // a fuzzy finder (e.g. fzf) can be used to access the documentation.
-// PS: cat $HOME/goapi.txt | fzf.exe --preview 'go doc {}' --preview-window 'right:67%'
 //
+// PS:		cat $HOME/goapi.txt | fzf.exe --preview 'go doc {}' --preview-window 'right:67%'
+// BASH:	cat ~/goapi.txt | fzf --preview 'go doc {}' --preview-window 'right:67%'
+//
+// PS:
 // function hh
 // {
 //   $name = Get-Content $HOME/goapi.txt | . $HOME/portable/fzf.exe --preview 'go doc {}' --preview-window 'right:67%'
 //   go doc $name
 // }
+//
+// BASH:
+// hh() {
+//     local entry
+//
+//     entry="$(cat ~/goapi.txt | fzf --preview 'go doc {}' --preview-window 'right:67%')"
+//     go doc $entry
+// }
+
 package main
 
 import (
