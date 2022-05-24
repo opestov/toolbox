@@ -6,13 +6,10 @@
 // Each item in the list is a valid argument for the 'go doc' tool. And now
 // a fuzzy finder (e.g. fzf) can be used to access the documentation.
 //
-// PS:		cat $HOME/goapi.txt | fzf.exe --preview 'go doc {}' --preview-window 'right:67%'
-// BASH:	cat ~/goapi.txt | fzf --preview 'go doc {}' --preview-window 'right:67%'
-//
 // PS:
 // function hh
 // {
-//   $name = Get-Content $HOME/goapi.txt | . $HOME/portable/fzf.exe --preview 'go doc {}' --preview-window 'right:67%'
+//   $name = Get-Content $HOME/goapi.txt | . $HOME/portable/fzf.exe --bind ctrl-k:kill-line --preview 'go doc {}' --preview-window 'right:67%'
 //   go doc $name
 // }
 //
@@ -20,7 +17,7 @@
 // hh() {
 //     local entry
 //
-//     entry="$(cat ~/goapi.txt | fzf --preview 'go doc {}' --preview-window 'right:67%')"
+//     entry="$(cat ~/goapi.txt | fzf --bind ctrl-k:kill-line --preview 'go doc {}' --preview-window 'right:67%')"
 //     go doc $entry
 // }
 
